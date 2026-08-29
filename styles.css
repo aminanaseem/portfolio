@@ -778,6 +778,34 @@ button { font-family: inherit; }
   color: var(--text-muted);
   margin-bottom: 16px;
 }
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.proj-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+.proj-link i { color: var(--primary); transition: color 0.3s; }
+.proj-link:hover {
+  background: var(--gradient);
+  color: #000;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--primary-glow);
+}
+.proj-link:hover i { color: #000; }
 .project-tech { display: flex; flex-wrap: wrap; gap: 8px; }
 
 /* ---------- Timeline ---------- */
