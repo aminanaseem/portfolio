@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amina Naseem | Cybersecurity & Digital Forensics</title>
+  <meta name="description" content="Amina Naseem — Cybersecurity & Digital Forensics Portfolio. Entry-level Cybersecurity professional specializing in digital forensics, threat intelligence, and AI-powered security." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== Custom Cursor ===== -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- ===== Preloader ===== -->
+  <div id="preloader">
+    <div class="loader">
+      <span>&lt;</span><span class="loader-accent">&gt;</span>
+    </div>
+    <p class="loader-text">INITIALIZING SECURE MODE...</p>
+  </div>
+
+  <!-- ===== Matrix Rain Canvas (background) ===== -->
+  <canvas id="matrix"></canvas>
+
+  <!-- ===== Particles Container ===== -->
+  <div id="particles"></div>
+
+  <!-- ===== Navigation ===== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-bracket">&lt;</span>Amina<span class="logo-accent">Naseem</span><span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#contact" class="btn btn-primary btn-sm">Hire Me</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== MOBILE MENU ===== -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ===== HERO SECTION ===== -->
+  <header id="home" class="hero section">
+    <div class="hero-content">
+      <p class="hero-tagline reveal">// SECURITY BY DESIGN, FORENSICS BY PASSION</p>
+      <h1 class="hero-title reveal">
+        <span class="name-block">I'm</span>
+        <span class="name-accent" data-text="AMINA NASEEM">AMINA NASEEM</span>
+      </h1>
+      <h2 class="hero-role">
+        <span id="typed"></span><span class="cursor-blink">|</span>
+      </h2>
+      <p class="hero-subtitle reveal">
+        Cybersecurity & <span class="highlight">Digital Forensics</span> professional crafting intelligent
+        defense solutions — from AI-powered forensic investigation to hands-on threat hunting.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#projects" class="btn btn-primary">View My Work <i class="fa-solid fa-arrow-down"></i></a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="stat">
+          <span class="stat-number" data-target="3.80">0</span>
+          <span class="stat-label">CGPA / 4.00</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="10">0</span>
+          <span class="stat-label">+ Projects</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="12">0</span>
+          <span class="stat-label">+ Certifications</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="6">0</span>
+          <span class="stat-label">+ Leadership Roles</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="mouse"><div class="wheel"></div></div>
+      <span>Scroll</span>
+    </div>
+  </header>
+
+  <!-- ===== MARQUEE STRIP ===== -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>DIGITAL FORENSICS</span><i class="fa-solid fa-shield-halved"></i>
+      <span>THREAT INTELLIGENCE</span><i class="fa-solid fa-bug"></i>
+      <span>INCIDENT RESPONSE</span><i class="fa-solid fa-radiation"></i>
+      <span>AI-POWERED SECURITY</span><i class="fa-solid fa-microchip"></i>
+      <span>PENETRATION TESTING</span><i class="fa-solid fa-terminal"></i>
+      <span>MALWARE ANALYSIS</span><i class="fa-solid fa-skull"></i>
+      <span>OSINT</span><i class="fa-solid fa-eye"></i>
+      <span>MCP AUTOMATION</span><i class="fa-solid fa-robot"></i>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="section section-pad">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-number">01</span>
+        <h2 class="section-title">About <span class="accent">Me</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <h3>Turning Threats into <span class="accent">Evidence</span></h3>
+          <p>
+            I'm an entry-level Cybersecurity professional with a Bachelor's degree in
+            <strong>Cyber Security and Digital Forensics</strong> and a strong academic record
+            (CGPA: <strong>3.80/4.00</strong>). I'm passionate about threat detection, incident response,
+            and protecting organizational assets through intelligent, AI-driven solutions.
+          </p>
+          <p>
+            My work blends hands-on forensics (Autopsy, Volatility 3, The Sleuth Kit) with modern AI/ML
+            (YOLOv8, LogBERT, RAG/LLM) and automation (MCP orchestration, n8n). I've built and contributed
+            to projects ranging from AI-powered forensic investigation platforms to automated phishing
+            detection research.
+          </p>
+          <div class="about-info">
+            <div class="info-item"><span>Name</span><span>Amina Naseem</span></div>
+            <div class="info-item"><span>Location</span><span>Bahawalnagar, Punjab, PK</span></div>
+            <div class="info-item"><span>Degree</span><span>BS Cyber Security & Digital Forensics</span></div>
+            <div class="info-item"><span>Email</span><span>aminanaseem101@gmail.com</span></div>
+          </div>
+          <div class="about-actions">
+            <a href="#projects" class="btn btn-primary">My Projects</a>
+            <a href="CV/Amina Naseem CV.pdf" class="btn btn-outline" target="_blank" rel="noopener">
+              <i class="fa-solid fa-download"></i> Download CV
+            </a>
+          </div>
+        </div>
+
+        <div class="about-card reveal">
+          <div class="card-frame">
+            <div class="card-header">
+              <span class="card-dot red"></span>
+              <span class="card-dot yellow"></span>
+              <span class="card-dot green"></span>
+              <span class="card-title">aminanaseem.exe</span>
+            </div>
+            <div class="card-body">
+              <p class="terminal-line"><span class="prompt">$</span> whoami</p>
+              <p class="terminal-out">aminanaseem</p>
+              <p class="terminal-line"><span class="prompt">$</span> cat role.txt</p>
+              <p class="terminal-out">Cybersecurity Analyst</p>
+              <p class="terminal-out">Digital Forensics Investigator</p>
+              <p class="terminal-out">AI Security Researcher</p>
+              <p class="terminal-line"><span class="prompt">$</span> skills --list</p>
+              <p class="terminal-out">[Python, C++, PHP, SQL, ML, Forensics]</p>
+              <p class="terminal-line"><span class="prompt">$</span> ./empower_defense.sh</p>
+              <p class="terminal-out typing-anim">Defending digital frontiers<span class="blink">▊</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section id="skills" class="section section-pad bg-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-number">02</span>
+        <h2 class="section-title">My <span class="accent">Skills</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-category reveal">
+          <h3><i class="fa-solid fa-fingerprint"></i> Digital Forensics</h3>
+          <div class="skill-tags">
+            <span class="tag">Autopsy</span>
+            <span class="tag">Volatility 3</span>
+            <span class="tag">The Sleuth Kit</span>
+            <span class="tag">PhotoRec</span>
+            <span class="tag">TShark</span>
+            <span class="tag">Scapy</span>
+            <span class="tag">YARA</span>
+            <span class="tag">Memory Forensics</span>
+            <span class="tag">Disk Forensics</span>
+            <span class="tag">Network Forensics</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3><i class="fa-solid fa-shield-halved"></i> Security Tools</h3>
+          <div class="skill-tags">
+            <span class="tag">Wireshark</span>
+            <span class="tag">Nmap</span>
+            <span class="tag">Metasploit</span>
+            <span class="tag">Burp Suite</span>
+            <span class="tag">Snort / Snort++</span>
+            <span class="tag">Suricata</span>
+            <span class="tag">Nessus</span>
+            <span class="tag">OSINT Framework</span>
+            <span class="tag">Ghidra</span>
+            <span class="tag">VirusTotal</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3><i class="fa-solid fa-code"></i> Programming</h3>
+          <div class="skill-tags">
+            <span class="tag">Python</span>
+            <span class="tag">C++</span>
+            <span class="tag">PHP</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">HTML / CSS</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Bash / Linux CLI</span>
+            <span class="tag">Tkinter</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3><i class="fa-solid fa-brain"></i> AI & Machine Learning</h3>
+          <div class="skill-tags">
+            <span class="tag">YOLOv8</span>
+            <span class="tag">LogBERT</span>
+            <span class="tag">XceptionNet</span>
+            <span class="tag">Random Forest</span>
+            <span class="tag">SVM</span>
+            <span class="tag">XGBoost</span>
+            <span class="tag">RAG / LLM</span>
+            <span class="tag">Sentence Transformers</span>
+            <span class="tag">CNNs</span>
+            <span class="tag">Soft-voting Ensemble</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3><i class="fa-solid fa-network-wired"></i> Platforms & Environments</h3>
+          <div class="skill-tags">
+            <span class="tag">Kali Linux</span>
+            <span class="tag">Linux CLI</span>
+            <span class="tag">Windows Server</span>
+            <span class="tag">EVE-NG</span>
+            <span class="tag">VirtualBox</span>
+            <span class="tag">n8n Automation</span>
+            <span class="tag">MCP Connectors</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3><i class="fa-solid fa-robot"></i> Automation Engineering</h3>
+          <div class="skill-tags">
+            <span class="tag">Model Context Protocol (MCP)</span>
+            <span class="tag">Custom MCP Connectors</span>
+            <span class="tag">n8n</span>
+            <span class="tag">Workflow Automation</span>
+            <span class="tag">JSON-RPC</span>
+            <span class="tag">AI Agent Orchestration</span>
+            <span class="tag">API Integrations</span>
+            <span class="tag">Email-to-Draft Pipelines</span>
+            <span class="tag">GraphQL / REST APIs</span>
+          </div>
+        </div>
+
+        <div class="skill-category reveal">
+          <h3><i class="fa-solid fa-lock"></i> Cybersecurity Domains</h3>
+          <div class="skill-tags">
+            <span class="tag">Incident Response</span>
+            <span class="tag">Threat Intelligence</span>
+            <span class="tag">Malware Analysis</span>
+            <span class="tag">Vulnerability Assessment</span>
+            <span class="tag">Penetration Testing</span>
+            <span class="tag">Network Security</span>
+            <span class="tag">MITRE ATT&CK</span>
+            <span class="tag">IoT Security</span>
+            <span class="tag">OSINT</span>
+            <span class="tag">Steganography</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section id="projects" class="section section-pad">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-number">03</span>
+        <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="projects-filter reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="forensics">Forensics</button>
+        <button class="filter-btn" data-filter="ai">AI / ML</button>
+        <button class="filter-btn" data-filter="web">Web Dev</button>
+        <button class="filter-btn" data-filter="automation">Automation</button>
+        <button class="filter-btn" data-filter="network">Network</button>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- HawkEye -->
+        <div class="project-card reveal" data-category="forensics ai">
+          <div class="project-preview">
+            <div class="preview-placeholder ph-hawkeye">
+              <i class="fa-solid fa-eye"></i>
+            </div>
+            <div class="project-links">
+              <span class="badge badge-featured">★ Final Year Project</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>HawkEye — AI-Powered Digital Forensics & Privacy-Compliant Cybercrime Reporting</h3>
+            <p class="project-desc">
+              Desktop-based digital forensics and cybercrime reporting app automating evidence acquisition,
+              analysis, and correlation across multiple forensic domains. Integrates Autopsy, Volatility 3,
+              PhotoRec, and Plaso with AI artifact classification, steganography/phishing detection, and an
+              AI/LLM agent.
+            </p>
+            <div class="project-tech">
+              <span class="tag small">Python</span><span class="tag small">PostgreSQL</span>
+              <span class="tag small">FAISS / Chroma</span><span class="tag small">Sentence Transformers</span>
+              <span class="tag small">CNNs</span><span class="tag small">RAG / LLM</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phish Defender -->
+        <div class="project-card reveal" data-category="ai">
+          <div class="project-preview">
+            <div class="preview-placeholder ph-phish">
+              <i class="fa-solid fa-fish"></i>
+            </div>
+            <div class="project-links">
+              <span class="badge badge-published">📄 Published — ISAISS 2026</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Phish Defender A&A — Multi-Model Ensemble Email Phishing Detection</h3>
+            <p class="project-desc">
+              Research project focused on email phishing detection and adversarial attacks. Uses Random Forest,
+              SVM, and XGBoost with NLP preprocessing and a soft-voting ensemble on the CEAS_08 phishing dataset.
+              Published through ISAISS 2026.
+            </p>
+            <div class="project-tech">
+              <span class="tag small">Random Forest</span><span class="tag small">SVM</span>
+              <span class="tag small">XGBoost</span><span class="tag small">NLP</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Custom YouTube MCP Connector -->
+        <div class="project-card reveal" data-category="automation ai">
+          <div class="project-preview">
+            <div class="preview-placeholder ph-mcp">
+              <i class="fa-solid fa-youtube"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Custom MCP Connector for YouTube</h3>
+            <p class="project-desc">
+              Built a custom Model Context Protocol (MCP) connector for YouTube, enabling AI agents to query
+              and orchestrate YouTube data through a standardized interface — a foundation of AI-driven tool
+              orchestration.
+            </p>
+            <div class="project-tech">
+              <span class="tag small">MCP</span><span class="tag small">JSON-RPC</span><span class="tag small">Automation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- n8n Email-to-Draft -->
+        <div class="project-card reveal" data-category="automation">
+          <div class="project-preview">
+            <div class="preview-placeholder ph-n8n">
+              <i class="fa-solid fa-envelope-open-text"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Email-to-Draft Automation Workflow (n8n)</h3>
+            <p class="project-desc">
+              Designed an email-to-draft automation workflow using n8n that streamlines communication and
+              content generation by automating the transformation of incoming emails into structured drafts.
+            </p>
+            <div class="project-tech">
+              <span class="tag small">n8n</span><span class="tag small">Workflow Automation</span><span class="tag small">Integrations</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Netflix Clone -->
+        <div class="project-card reveal" data-category="web">
+          <div class="project-preview">
+            <div class="preview-placeholder ph-netflix">
+              <i class="fa-brands fa-ethereum"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Netflix Clone</h3>
+            <p class="project-desc">
+              Front-end web development project recreating the Netflix interface with rich front-end
+              interactions and animations using HTML, CSS, and JavaScript.
+            </p>
+            <div class="project-tech">
+              <span class="tag small">HTML</span><span class="tag small">CSS</span><span class="tag small">JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Front-End Animation -->
+        <div class="project-card reveal" data-category="web">
+          <div class="project-preview">
+            <div class="preview-placeholder ph-anim">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Interactive Front-End Animation Projects</h3>
+            <p class="project-desc">
+              Interactive and animated web interfaces built with GSAP, ScrollTrigger, jQuery, Typed.js, and
+              Locomotive Scroll — bringing modern motion design to the web.
+            </p>
+            <div class="project-tech">
+              <span class="tag small">GSAP</span><span class="tag small">ScrollTrigger</span>
+              <span class="tag small">jQuery</span><span class="tag small">Typed.js</span><span class="tag small">Locomotive</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- NIDS -->
+        <div class="project-card reveal" data-category="network">
+          <div class="project-preview">
+            <div class="preview-placeholder ph-snort">
+              <i class="fa-solid fa-network-wired"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Network Intrusion Detection System (Snort & Suricata)</h3>
+            <p class="project-desc">
+              Deployed Snort and Suricata as NIDS to monitor network traffic; wrote custom rules to detect port
+              scans, brute-force attempts, and suspicious payloads. Configured and troubleshot IDS on Kali Linux,
+              including Snorpy exploration.
+            </p>
+            <div class="project-tech">
+              <span class="tag small">Snort</span><span class="tag small">Suricata</span>
+              <span class="tag small">Kali Linux</span><span class="tag small">Custom Rules</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nessus -->
+        <div class="project-card reveal" data-category="network">
+          <div class="project-preview">
+            <div class="preview-placeholder ph-nessus">
+              <i class="fa-solid fa-shield"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Nessus Vulnerability Scanning Setup</h3>
+            <p class="project-desc">
+              Installed and configured Nessus, working through service status and scan configuration issues on
+              Kali Linux to perform comprehensive vulnerability scanning.
+            </p>
+            <div class="project-tech">
+              <span class="tag small">Nessus</span><span class="tag small">Vulnerability Assessment</span><span class="tag small">Kali Linux</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CVSS Calculator -->
+        <div class="project-card reveal" data-category="network ai">
+          <div class="project-preview">
+            <div class="preview-placeholder ph-cvss">
+              <i class="fa-solid fa-calculator"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>CVSS Calculator GUI</h3>
+            <p class="project-desc">
+              Python-based Tkinter GUI designed for calculating and working with CVSS vulnerability scores,
+              providing an intuitive interface for scoring and analysis.
+            </p>
+            <div class="project-tech">
+              <span class="tag small">Python</span><span class="tag small">Tkinter</span><span class="tag small">CVSS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Digital Forensics Lab -->
+        <div class="project-card reveal" data-category="forensics">
+          <div class="project-preview">
+            <div class="preview-placeholder ph-forensics">
+              <i class="fa-solid fa-microscope"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3>Digital Forensics Lab — Autopsy & Volatility</h3>
+            <p class="project-desc">
+              Practical forensic investigations using Autopsy for disk evidence and Volatility 3 for memory
+              analysis. This work also contributed directly to the HawkEye project.
+            </p>
+            <div class="project-tech">
+              <span class="tag small">Autopsy</span><span class="tag small">Volatility 3</span><span class="tag small">Disk Forensics</span><span class="tag small">Memory Forensics</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE SECTION ===== -->
+  <section id="experience" class="section section-pad bg-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-number">04</span>
+        <h2 class="section-title">Professional <span class="accent">Experience</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">Jan 2025 – Mar 2026</span>
+            <h3>Cyber Security Analyst</h3>
+            <span class="timeline-org">Pakistan Aeronautical Complex (PAC Kamra)</span>
+            <ul>
+              <li>Monitored enterprise LAN infrastructure in a mission-critical defense environment, ensuring high availability and security.</li>
+              <li>Configured switches, routers, and wireless access points; implemented VLAN segmentation for access control.</li>
+              <li>Applied physical and environmental security controls to protect critical IT infrastructure.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">Aug 2025 – Sep 2025</span>
+            <h3>Cyber Security Analyst (Internship)</h3>
+            <span class="timeline-org">Corvit Networks Pakistan</span>
+            <ul>
+              <li>Assisted SOC analysts in monitoring and investigating security alerts and potential threats.</li>
+              <li>Performed log analysis and event correlation for incident triage and IOC analysis.</li>
+              <li>Gained hands-on exposure to threat monitoring, vulnerability identification, and incident response.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">Feb 2026 – Jun 2026</span>
+            <h3>Chairperson</h3>
+            <span class="timeline-org">IEEE ComSoc — UCET IUB Pakistan</span>
+            <ul>
+              <li>Led the IEEE Communications Society student chapter: strategic planning, technical initiatives, and community engagement.</li>
+              <li>Organized seminars, workshops, and events focused on emerging communication technologies and cybersecurity trends.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">Dec 2025 – Feb 2026</span>
+            <h3>Vice Chair</h3>
+            <span class="timeline-org">IEEE ComSoc-UCET IUB Pakistan</span>
+            <ul>
+              <li>Supported the Chairperson in managing chapter operations and executing technical and professional events.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2025 – 2026</span>
+            <h3>General Secretary</h3>
+            <span class="timeline-org">Center for Cyber Security and Digital Forensics (IUB)</span>
+            <ul>
+              <li>Managed official documentation, meeting minutes, and correspondence; organized workshops and events.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">Mar 2026 – Jun 2026</span>
+            <h3>Joint Secretary</h3>
+            <span class="timeline-org">Cyber Security Student Club (IUB)</span>
+            <ul>
+              <li>Maintained official records and coordinated administrative tasks and communication between the Executive Board and divisions.</li>
+              <li>Supported planning and execution of workshops, guest lectures, CTF competitions, and social events.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2024 – 2025</span>
+            <h3>Marketing Head</h3>
+            <span class="timeline-org">Center for Cyber Security and Digital Forensics (IUB)</span>
+            <ul>
+              <li>Led promotional campaigns for cybersecurity events; managed social media and event publicity.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">Sep 2024 – Oct 2024</span>
+            <h3>PHP Developer Intern</h3>
+            <span class="timeline-org">BixiSoft Pakistan</span>
+            <ul>
+              <li>Developed backend components using PHP and learned secure coding practices.</li>
+              <li>Collaborated with developers to implement and test application features.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION SECTION ===== -->
+  <section id="education" class="section section-pad">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-number">05</span>
+        <h2 class="section-title">My <span class="accent">Education</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="edu-grid">
+        <div class="edu-card reveal">
+          <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="edu-body">
+            <h3>BS Cyber Security & Digital Forensics</h3>
+            <span class="edu-org">The Islamia University of Bahawalpur</span>
+            <span class="edu-date">Sep 2022 – Jun 2026</span>
+            <p>CGPA: 3.80 / 4.00</p>
+            <div class="edu-tags">
+              <span class="tag small">Network Security</span>
+              <span class="tag small">Digital Forensics</span>
+              <span class="tag small">Ethical Hacking</span>
+              <span class="tag small">Cryptography</span>
+              <span class="tag small">Operating Systems</span>
+              <span class="tag small">Database Management</span>
+              <span class="tag small">Information Assurance</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATIONS SECTION ===== -->
+  <section id="certifications" class="section section-pad bg-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-number">06</span>
+        <h2 class="section-title">Certifications & <span class="accent">Awards</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="cert-grid">
+
+        <div class="cert-card reveal">
+          <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+          <h4>Certificate of Appreciation</h4>
+          <p>TechXhibit 2026 — Air University Multan</p>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon"><i class="fa-solid fa-medal"></i></div>
+          <h4>Shield of Appreciation — Chairperson</h4>
+          <p>IEEE Student Branch</p>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon"><i class="fa-solid fa-medal"></i></div>
+          <h4>Shield of Appreciation — Marketing Head</h4>
+          <p>Center for Cyber Security & Digital Forensics (2024–2025)</p>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon"><i class="fa-solid fa-medal"></i></div>
+          <h4>Shield of Appreciation — General Secretary</h4>
+          <p>Center for Cyber Security & Digital Forensics (2025–2026)</p>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+          <h4>IEEE Communications Society</h4>
+          <p>6G Megatrends and Technology Enablers</p>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+          <h4>Cisco Introduction to Cybersecurity</h4>
+          <p>Networking Academy Badge</p>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+          <h4>OSINT (Open-Source Intelligence)</h4>
+          <p>Cybersecurity Training</p>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+          <h4>IoT Ethical Hacking</h4>
+          <p>IoT Security Course</p>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+          <h4>Windows Networking</h4>
+          <p>Networking Fundamentals</p>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+          <h4>Data Science & Machine Learning</h4>
+          <p>Dicecamp</p>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+          <h4>Prime Minister's Youth Laptop Scheme</h4>
+          <p>Phase III — Merit Award</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY / CERTIFICATE IMAGES ===== -->
+  <section id="gallery" class="section section-pad">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-number">07</span>
+        <h2 class="section-title">Certificate <span class="accent">Gallery</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <p class="section-note reveal">
+        Highlights from my internships, training programs, IEEE involvement, and academic achievements.
+      </p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item reveal">
+          <a href="assets/images/PAC.jpg" data-lightbox="gallery"><img src="assets/images/PAC.jpg" alt="PAC Kamra Certificate" /><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></a>
+        </div>
+        <div class="gallery-item reveal">
+          <a href="assets/images/Corvit.jpg" data-lightbox="gallery"><img src="assets/images/Corvit.jpg" alt="Corvit Networks Certificate" /><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></a>
+        </div>
+        <div class="gallery-item reveal">
+          <a href="assets/images/Bixisoft.jpg" data-lightbox="gallery"><img src="assets/images/Bixisoft.jpg" alt="BixiSoft Internship Certificate" /><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></a>
+        </div>
+        <div class="gallery-item reveal">
+          <a href="assets/images/Dice.jpg" data-lightbox="gallery"><img src="assets/images/Dice.jpg" alt="Dicecamp Certificate" /><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></a>
+        </div>
+        <div class="gallery-item reveal">
+          <a href="assets/images/comsoc-traning.jpg" data-lightbox="gallery"><img src="assets/images/comsoc-traning.jpg" alt="IEEE ComSoc Training" /><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></a>
+        </div>
+        <div class="gallery-item reveal">
+          <a href="assets/images/Traing.jpg" data-lightbox="gallery"><img src="assets/images/Traing.jpg" alt="Cybersecurity Training" /><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></a>
+        </div>
+        <div class="gallery-item reveal">
+          <a href="assets/images/iub.jpeg" data-lightbox="gallery"><img src="assets/images/iub.jpeg" alt="IUB Achievement" /><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></a>
+        </div>
+        <div class="gallery-item reveal">
+          <a href="assets/images/INTER.jpeg" data-lightbox="gallery"><img src="assets/images/INTER.jpeg" alt="Internship Certificate" /><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="section section-pad">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-number">08</span>
+        <h2 class="section-title">Get In <span class="accent">Touch</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h3>Let's Build Secure Solutions Together</h3>
+          <p>
+            I'm open to SOC Analyst, Cybersecurity Analyst, and Network Security roles, as well as
+            collaboration on forensics and AI security projects. Let's connect!
+          </p>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <span class="contact-label">Email</span>
+              <a href="mailto:aminanaseem101@gmail.com">aminanaseem101@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <span class="contact-label">Phone</span>
+              <a href="tel:+923251528381">+92 325 1528381</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <span class="contact-label">Location</span>
+              <span>Bahawalnagar, Punjab, Pakistan</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+            <div>
+              <span class="contact-label">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/amina-naseem-b25001330" target="_blank" rel="noopener">in/amina-naseem-b25001330</a>
+            </div>
+          </div>
+
+          <div class="contact-social">
+            <a href="https://www.linkedin.com/in/amina-naseem-b25001330" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="mailto:aminanaseem101@gmail.com" aria-label="Email" class="social-btn"><i class="fa-solid fa-envelope"></i></a>
+            <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub" class="social-btn"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+
+        <div class="contact-form reveal">
+          <form id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="How can I help?" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+            <p id="formStatus" class="form-status"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&lt;Amina Naseem /&gt; — Securing the digital world, one investigation at a time.</p>
+      <p class="footer-copyright">© <span id="year"></span> Amina Naseem. All rights reserved. Built with <i class="fa-solid fa-heart"></i> &amp; <span class="accent">security</span> &lt;3</p>
+      <button id="backToTop" class="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <img src="" alt="" id="lightboxImg" />
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
