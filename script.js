@@ -53,9 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const matrixDrops = Array.from({ length: matrixCols || 1 }, () => Math.floor(Math.random() * -50));
 
   function drawMatrix() {
-    ctx.fillStyle = 'rgba(10, 14, 23, 0.05)';
+    ctx.fillStyle = 'rgba(14, 13, 12, 0.05)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#00ff88';
+    ctx.fillStyle = '#d4a853';
     ctx.font = fontSize + 'px monospace';
     for (let i = 0; i < matrixCols; i++) {
       const char = chars[Math.floor(Math.random() * chars.length)];
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Floating Particles ---------- */
   const particleContainer = $('#particles');
-  const PARTICLE_COUNT = 40;
+  const PARTICLE_COUNT = 20;
   for (let i = 0; i < PARTICLE_COUNT; i++) {
     const p = document.createElement('div');
     p.className = 'particle';
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
     p.style.left = Math.random() * 100 + '%';
     p.style.animationDuration = (Math.random() * 15 + 10) + 's';
     p.style.animationDelay = (Math.random() * 15) + 's';
-    p.style.background = ['#00d4ff', '#00ff88', '#a855f7'][Math.floor(Math.random() * 3)];
+    p.style.background = ['#d4a853', '#c97b63', '#b8a9c9'][Math.floor(Math.random() * 3)];
     particleContainer.appendChild(p);
   }
 
@@ -256,4 +256,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------- Footer Year ---------- */
   $('#year').textContent = new Date().getFullYear();
+
+  /* ---------- Assistant Widget ---------- */
+  const assistantFab = $('#assistantFab');
+  const assistantWindow = $('#assistantWindow');
+  const assistantClose = $('#assistantClose');
+  const assistantBody = $('#assistantBody');
+  const assistantQuick = $('#assistantQuick');
+
+  const responses = {
+    who: "Amina Naseem is a cybersecurity professional from Bahawalnagar, Pakistan, specializing in digital forensics and AI-powered security. She holds a BS in Cyber Security & Digital Forensics from The Islamia University of Bahawalpur with a CGPA of 3.80/4.00.",
+    skills: "Her core skills include:\n- Digital Forensics: Autopsy, Volatility 3, The Sleuth Kit, PhotoRec\n- Security: Wireshark, Nmap, Metasploit, Burp Suite, Snort\n- AI/ML: YOLOv8, LogBERT, CNNs, RAG/LLM, Sentence Transformers\n- Programming: Python, C++, PHP, JavaScript, SQL, Bash\n- Automation: MCP connectors, n8n workflows",
+    projects: "She's built 10+ projects including:\n- HawkEye (Final Year Project): AI-powered forensics platform with Autopsy, Volatility 3, and LLM agent\n- Phish Defender: Published research on email phishing detection using ensemble ML\n- Custom YouTube MCP Connector for AI agent orchestration\n- Network IDS using Snort & Suricata\n- Plus forensics labs, web dev projects, and a CVSS calculator",
+    education: "BS Cyber Security & Digital Forensics from The Islamia University of Bahawalpur (Sep 2022 - Jun 2026). CGPA: 3.80/4.00. Subjects include Network Security, Digital Forensics, Ethical Hacking, Cryptography, and more.",
+    experience: "8 leadership and professional roles:\n- Cyber Security Analyst at PAC Kamra (Jan 2025 - Mar 2026)\n- SOC Intern at Corvit Networks (Aug-Sep 2025)\n- Chairperson, IEEE ComSoc at UCET IUB\n- General Secretary, Center for Cyber Security & Digital Forensics\n- Plus marketing, secretary roles and PHP dev internship at BixiSoft",
+    contact: "You can reach Amina at:\n- Email: aminanaseem101@gmail.com\n- Phone: +92 325 1528381\n- LinkedIn: linkedin.com/in/amina-naseem-b25001330\n- Or use the contact form on this page!"
+  };
+
+  assistantFab.addEventListener('click', () => {
+    assistantWindow.classList.toggle('open');
+    if (assistantWindow.classList.contains('open')) {
+      assistantBody.scrollTop = assistantBody.scrollHeight;
+    }
+  });
+
+  assistantClose.addEventListener('click', () => {
+    assistantWindow.classList.remove('open');
+  });
+
+  function addMessage(text, type) {
+    const msg = document.createElement('div');
+    msg.className = 'assistant-msg ' + type;
+    msg.textContent = text;
+    assistantBody.appendChild(msg);
+    assistantBody.scrollTop = assistantBody.scrollHeight;
+  }
+
+  assistantQuick.querySelectorAll('button').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const q = btn.dataset.q;
+      const questionMap = {
+        who: "Who is Amina?",
+        skills: "What are her top skills?",
+        projects: "Tell me about her projects",
+        education: "What's her education?",
+        experience: "What's her experience?",
+        contact: "How can I reach her?"
+      };
+      addMessage(questionMap[q] || q, 'user');
+      setTimeout(() => {
+        addMessage(responses[q] || "I don't have info on that yet. Try one of the buttons below!", 'bot');
+      }, 400);
+    });
+  });
 });
