@@ -406,6 +406,28 @@ button { font-family: inherit; }
   margin-bottom: 36px;
 }
 .hero-subtitle .highlight { color: var(--primary); font-weight: 600; }
+.hero-story {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-bottom: 32px;
+  min-height: 2em;
+}
+.story-prefix {
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid rgba(201,123,99,0.3);
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+}
+.story-type { color: var(--primary); }
+.story-cursor { color: var(--accent); animation: blink 0.85s infinite; margin-left: 2px; }
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 60px; }
 
 .hero-stats {

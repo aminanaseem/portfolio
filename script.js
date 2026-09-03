@@ -180,6 +180,39 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   typeLoop();
 
+  /* ---------- Story Telling 2.0 (Typewriter Loop) ---------- */
+  const storyLines = [
+    'curiosity → got me reading logs',
+    'reading logs → made me build tools',
+    'tools → turned into threat hunting',
+    'threat hunting → now I defend networks',
+    'networks → secured with AI & automation'
+  ];
+  const storyEl = $('#storyType');
+  if (storyEl) {
+    let sIdx = 0, sChar = 0, sDeleting = false;
+    function storyLoop() {
+      const line = storyLines[sIdx];
+      if (!sDeleting) {
+        storyEl.textContent = line.substring(0, sChar++);
+        if (sChar > line.length) {
+          sDeleting = true;
+          setTimeout(storyLoop, 2600);
+          return;
+        }
+        setTimeout(storyLoop, 45);
+      } else {
+        storyEl.textContent = line.substring(0, sChar--);
+        if (sChar < 0) {
+          sDeleting = false;
+          sIdx = (sIdx + 1) % storyLines.length;
+        }
+        setTimeout(storyLoop, 22);
+      }
+    }
+    setTimeout(storyLoop, 1200);
+  }
+
   /* ---------- Scroll Reveal ---------- */
   const revealEls = $$('.reveal');
   const revealObserver = new IntersectionObserver((entries) => {
