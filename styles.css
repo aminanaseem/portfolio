@@ -159,44 +159,6 @@ button { font-family: inherit; }
   text-transform: uppercase;
 }
 
-/* ---------- Background Matrix + Particles ---------- */
-#matrix {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-  opacity: 0.04;
-  mix-blend-mode: soft-light;
-}
-#particles {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-}
-#particles .particle {
-  position: absolute;
-  bottom: -10px;
-  width: 3px;
-  height: 3px;
-  background: var(--primary);
-  border-radius: 50%;
-  box-shadow: 0 0 6px var(--primary-glow);
-  animation: floatUp linear infinite;
-  opacity: 0;
-}
-@keyframes floatUp {
-  0% { transform: translateY(0); opacity: 0; }
-  10% { opacity: 0.8; }
-  90% { opacity: 0.5; }
-  100% { transform: translateY(-110vh); opacity: 0; }
-}
-
 /* ---------- Navigation ---------- */
 #navbar {
   position: fixed;

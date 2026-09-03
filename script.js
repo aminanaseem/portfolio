@@ -36,60 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- Matrix Rain Background ---------- */
-  const canvas = $('#matrix');
-  const ctx = canvas.getContext('2d');
-  let matrixCols, fontSize = 16;
-  const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノABCDEF#$%&*';
-
-  function resizeMatrix() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    matrixCols = Math.ceil(canvas.width / fontSize);
-  }
-  resizeMatrix();
-  window.addEventListener('resize', resizeMatrix);
-
-  const matrixDrops = Array.from({ length: matrixCols || 1 }, () => Math.floor(Math.random() * -50));
-
-  function drawMatrix() {
-    ctx.fillStyle = 'rgba(16, 20, 28, 0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#d4a853';
-    ctx.font = fontSize + 'px monospace';
-    for (let i = 0; i < matrixCols; i++) {
-      const char = chars[Math.floor(Math.random() * chars.length)];
-      ctx.fillText(char, i * fontSize, matrixDrops[i] * fontSize);
-      if (matrixDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-        matrixDrops[i] = 0;
-      }
-      matrixDrops[i]++;
-    }
-  }
-  // Matrix animation (moderate for perf)
-  let matrixRunning = true;
-  function matrixLoop() {
-    if (matrixRunning) drawMatrix();
-    requestAnimationFrame(matrixLoop);
-  }
-  matrixLoop();
-
-  /* ---------- Floating Particles ---------- */
-  const particleContainer = $('#particles');
-  const PARTICLE_COUNT = 20;
-  for (let i = 0; i < PARTICLE_COUNT; i++) {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    const size = Math.random() * 4 + 2;
-    p.style.width = size + 'px';
-    p.style.height = size + 'px';
-    p.style.left = Math.random() * 100 + '%';
-    p.style.animationDuration = (Math.random() * 15 + 10) + 's';
-    p.style.animationDelay = (Math.random() * 15) + 's';
-    p.style.background = ['#d4a853', '#c97b63', '#b8a9c9'][Math.floor(Math.random() * 3)];
-    particleContainer.appendChild(p);
-  }
-
   /* ---------- Navbar Scroll ---------- */
   const navbar = $('#navbar');
   window.addEventListener('scroll', () => {
