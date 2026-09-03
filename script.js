@@ -9,6 +9,82 @@ document.addEventListener('DOMContentLoaded', () => {
   const $ = (sel) => document.querySelector(sel);
   const $$ = (sel) => document.querySelectorAll(sel);
 
+  /* ---------- 3D Background (Three.js) ---------- */
+  function init3D() {
+    if (!window.THREE) return;
+    const container = $('#bg3d');
+    if (!container) return;
+
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x10141c, 0.0012);
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 60;
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    container.appendChild(renderer.domElement);
+
+    const colors = [0xd4a853, 0xc97b63, 0xb8a9c9, 0xd4a853, 0xc97b63];
+    const particleCount = 650;
+    const positions = new Float32Array(particleCount * 3);
+    const colorArray = new Float32Array(particleCount * 3);
+    const sizes = new Float32Array(particleCount);
+    const c = new THREE.Color();
+
+    for (let i = 0; i < particleCount; i++) {
+      positions[i * 3] = (Math.random() - 0.5) * 200;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 200;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 200;
+      c.setHex(colors[i % colors.length]);
+      colorArray[i * 3] = c.r;
+      colorArray[i * 3 + 1] = c.g;
+      colorArray[i * 3 + 2] = c.b;
+      sizes[i] = Math.random() * 1.6 + 0.3;
+    }
+
+    const geometry = new THREE.BufferGeometry();
+    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute('color', new THREE.BufferAttribute(colorArray, 3));
+    geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+    if (geometry.computeBoundingSphere) geometry.computeBoundingSphere();
+
+    const material = new THREE.PointsMaterial({
+      size: 0.9,
+      vertexColors: true,
+      transparent: true,
+      opacity: 0.9,
+      sizeAttenuation: true
+    });
+    const points = new THREE.Points(geometry, material);
+    scene.add(points);
+
+    let mouseX = 0, mouseY = 0;
+    window.addEventListener('mousemove', (e) => {
+      mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+      mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+    });
+
+    function animate() {
+      requestAnimationFrame(animate);
+      const time = Date.now() * 0.0002;
+      points.rotation.y = time * 0.1 + mouseX * 0.12;
+      points.rotation.x = time * 0.06 + mouseY * 0.08;
+      points.rotation.z += 0.0004;
+      camera.position.x += (mouseX * 6 - camera.position.x) * 0.04;
+      camera.position.y += (-mouseY * 6 - camera.position.y) * 0.04;
+      camera.lookAt(scene.position);
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  }
+  init3D();
+
   /* ---------- Preloader ---------- */
   const preloader = $('#preloader');
   window.addEventListener('load', () => {
