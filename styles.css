@@ -5,19 +5,19 @@
 
 /* ---------- CSS Variables ---------- */
 :root {
-  --bg: #0e0d0c;
-  --bg-alt: #141311;
-  --bg-card: #1a1917;
-  --surface: rgba(26, 25, 23, 0.8);
+  --bg: #10141c;
+  --bg-alt: #151a25;
+  --bg-card: #1b212e;
+  --surface: rgba(27, 33, 46, 0.85);
   --primary: #d4a853;
   --primary-glow: rgba(212, 168, 83, 0.3);
   --accent: #c97b63;
   --accent-glow: rgba(201, 123, 99, 0.3);
   --purple: #b8a9c9;
-  --text: #d4cfc7;
-  --text-muted: #8a847a;
-  --heading: #f0ebe3;
-  --border: rgba(255, 255, 255, 0.07);
+  --text: #d8d9dd;
+  --text-muted: #8f94a0;
+  --heading: #f4f5f7;
+  --border: rgba(255, 255, 255, 0.08);
   --gradient: linear-gradient(135deg, #d4a853, #c97b63);
   --gradient-text: linear-gradient(135deg, #d4a853, #c97b63, #b8a9c9);
   --radius: 14px;
@@ -404,11 +404,8 @@ button { font-family: inherit; }
   -webkit-text-fill-color: transparent;
   color: transparent;
   position: relative;
-  display: inline-block;
-  transform-origin: 50% 100%;
   background-size: 200% 100%;
   animation: shimmer 6s ease-in-out infinite;
-  transition: transform 0.1s linear, filter 0.1s linear, opacity 0.1s linear;
 }
 @keyframes shimmer {
   0%, 100% { background-position: 0% 50%; }
@@ -498,17 +495,16 @@ button { font-family: inherit; }
   justify-content: center;
   align-items: center;
   align-self: center;
-  transform: translateY(-30px);
 }
 .hero-img-frame {
   position: relative;
-  width: 100%;
-  max-width: 360px;
-  padding: 12px;
-  background: linear-gradient(160deg, rgba(212,168,83,0.15), rgba(201,123,99,0.1));
+  width: min(86%, 340px);
+  padding: 10px;
+  background: linear-gradient(160deg, rgba(212,168,83,0.18), rgba(201,123,99,0.1));
   border: 1px solid var(--border);
   border-radius: var(--radius);
   animation: heroFloat 5s ease-in-out infinite;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.5);
 }
 .hero-img-frame::before {
   content: '';
@@ -517,12 +513,12 @@ button { font-family: inherit; }
   border-radius: calc(var(--radius) + 2px);
   background: var(--gradient);
   z-index: -1;
-  opacity: 0.35;
-  filter: blur(18px);
+  opacity: 0.3;
+  filter: blur(20px);
 }
 @keyframes heroFloat {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-12px) rotate(1deg); }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 .hero-img-frame img {
   width: 100%;
@@ -1490,7 +1486,7 @@ button { font-family: inherit; }
   .hero { padding: 120px 24px 60px; }
   .hero-inner { grid-template-columns: 1fr; gap: 40px; text-align: center; }
   .hero-image { order: 2; }
-  .hero-img-frame { max-width: 260px; margin: 0 auto; }
+  .hero-img-frame { width: 78%; max-width: 260px; margin: 0 auto; }
   .hero-actions, .hero-stats { justify-content: center; }
   .hero-subtitle { margin-left: auto; margin-right: auto; }
   .hero-tagline, .hero-title { text-align: center; }

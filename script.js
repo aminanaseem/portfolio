@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const matrixDrops = Array.from({ length: matrixCols || 1 }, () => Math.floor(Math.random() * -50));
 
   function drawMatrix() {
-    ctx.fillStyle = 'rgba(14, 13, 12, 0.05)';
+    ctx.fillStyle = 'rgba(16, 20, 28, 0.05)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = '#d4a853';
     ctx.font = fontSize + 'px monospace';
@@ -169,43 +169,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
   revealEls.forEach((el) => revealObserver.observe(el));
-
-  /* ---------- Hero Name Scroll Animation ---------- */
-  const heroSection = $('.hero');
-  const heroName = $('.hero-title .name-accent');
-  if (heroSection && heroName) {
-    const heroTop = heroSection.offsetTop;
-    const heroHeight = heroSection.offsetHeight;
-    let heroAnimating = false;
-    function animateHeroName() {
-      if (heroAnimating) return;
-      heroAnimating = true;
-      requestAnimationFrame(() => {
-        const rect = heroSection.getBoundingClientRect();
-        const viewport = window.innerHeight;
-        const progress = 1 - rect.bottom / viewport;
-        const clamped = Math.min(Math.max(progress, 0), 1);
-        let scale, brightness, opacity;
-        if (clamped <= 0.5) {
-          const t = clamped / 0.5;
-          scale = 1 + 0.18 * t;
-          brightness = 1 + 0.4 * t;
-        } else {
-          const t = (clamped - 0.5) / 0.5;
-          scale = 1.18 - 0.22 * t;
-          brightness = 1.4 - 0.8 * t;
-          opacity = 1 - t * 0.25;
-        }
-        heroName.style.transform = `scale(${scale})`;
-        heroName.style.filter = `brightness(${brightness})`;
-        heroName.style.opacity = opacity !== undefined ? opacity : 1;
-        heroAnimating = false;
-      });
-    }
-    window.addEventListener('scroll', animateHeroName, { passive: true });
-    animateHeroName();
-  }
-
 
   /* ---------- Counter Animation ---------- */
   const statNumbers = $$('.stat-number');
